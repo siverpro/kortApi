@@ -1,0 +1,40 @@
+Fisker: 
+  type: object
+  properties:
+    id:
+      type: string
+    username:
+      type: string
+      description: User name
+  required:
+    - username
+    - id
+ 
+Fiskere:
+  required:
+    - fiskere
+  properties:
+    fiskere:
+      type: array
+      items:
+        $ref: "#/Fisker"
+
+ErrorResponse:
+  required:
+    - message
+  properties:
+    message:
+      type: string
+
+GeneralResponse:
+  type: object
+  properties:
+    success:
+      type: number
+      description: returns 1 if successful
+    description:
+      type: string
+      description: a short comment 
+  required:
+    - success
+    - description
