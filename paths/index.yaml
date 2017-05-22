@@ -1,4 +1,4 @@
-/users:
-  $ref: ./users.yaml
-/user/{id}:
-  $ref: ./user.yaml
+/fiskere:
+  $ref: ./fiskere.yaml
+/fisker/{id}:
+  $ref: ./fisker.yaml
