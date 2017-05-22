@@ -8,7 +8,7 @@ get:
       description: Success
       schema:
       # a pointer to a definition
-        $ref: "#/definitions/GetUsersResponse"
+        $ref: "#/definitions/Fiskere"
       # responses may fall through to errors
     default:
       description: Error

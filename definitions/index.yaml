@@ -1,36 +1,23 @@
 Fisker: 
   type: object
   properties:
+    id:
+      type: string
     username:
       type: string
       description: User name
   required:
     - username
+    - id
  
-GetUsersResponse:
+Fiskere:
   required:
     - users
   properties:
     users:
-      # array of users
       type: array
       items:
-        type: object
-        properties:
-         id:
-            type: string
-         username:
-            type: string
-              
-GetUserResponse:
-  required:
-    - id
-    - username
-  properties:
-    id:
-      type: string
-    username:
-      type: string
+        $ref: "#/Fisker"
 
 ErrorResponse:
   required:
