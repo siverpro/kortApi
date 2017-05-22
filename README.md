@@ -1,1 +1,2 @@
-# Skeleton project for Swagger
+# Fortuna Fiskekort API
+Swagger-generert API. Helt pro.
