@@ -12,9 +12,9 @@ Fisker:
  
 Fiskere:
   required:
-    - users
+    - fiskere
   properties:
-    users:
+    fiskere:
       type: array
       items:
         $ref: "#/Fisker"
