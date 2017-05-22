@@ -1,10 +1,13 @@
-'use strict';
+import app, { init } from './app';
 
 // Set default node environment to development
-var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'development';
+process.env.NODE_ENV = env;
 
 if (env === 'development' || env === 'test') {
-	console.log(`Environment is set to: ${env}`);
+  console.log(`Environment is set to: ${env}`);
 }
 
-exports = module.exports = require('./app');
+init();
+
+export default app;

@@ -1,26 +1,24 @@
-'use strict';
-var Fisker = require('../models/Fisker');
+import Fisker from '../models/Fisker';
 
-module.exports = {getAll, save, getOne, update, delUser};
-
-function getAll(req, res, next) {
+function getAll(req, res) {
   res.json({ users: Fisker.find() });
 }
 
-function save(req, res, next) {
-  res.json({ success: Fisker.save(req.body), description: "Fisker added"  });
+function save(req, res) {
+  res.json({ success: Fisker.save(req.body), description: 'Fisker added' });
 }
 
-function getOne(req, res, next) {
-  var id = req.swagger.params.id.value;
-  var user = Fisker.find(id);
-  
+function getOne(req, res) {
+	let id = req.swagger.params.id.value;
+  let user = Fisker.find(id);
 }
 
-function update(req, res, next) {
+function update(req, res) {
+	
+}
+
+function delUser(req, res) {
 
 }
 
-function delUser(req, res, next) {
-
-}
+export { getAll, save, getOne, update, delUser };

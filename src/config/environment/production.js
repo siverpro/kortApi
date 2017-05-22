@@ -1,9 +1,9 @@
-'use strict';
-/*eslint no-process-env:0*/
-
 // Production specific configuration
 // =================================
-module.exports = {
+
+process.env.NODE_CONFIG_DIR = 'dist/config';
+
+export default {
   // Server IP
   ip: process.env.OPENSHIFT_NODEJS_IP
     || process.env.ip
@@ -19,6 +19,6 @@ module.exports = {
     uri: process.env.MONGODB_URI
       || process.env.MONGOHQ_URL
       || process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME
-      || 'mongodb://localhost/fortunadb'
-  }
+      || 'mongodb://localhost/fortunadb',
+  },
 };

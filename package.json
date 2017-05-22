@@ -6,7 +6,7 @@
   "keywords": [],
   "author": "",
   "license": "",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "dependencies": {
     "express": "^4.12.3",
     "lodash": "^4.17.4",
@@ -36,7 +36,7 @@
     ]
   },
   "scripts": {
-    "start": "npm build && node dist/index.js",
+    "start": "npm run build && node dist/index.js",
     "dev": "babel-watch src",
     "swagger": "export swagger_swagger_fileName='src/api/swagger/swagger.yaml' && swagger project edit",
     "swagger-win": "set swagger_swagger_fileName='src/api/swagger/swagger.yaml' && swagger project edit",

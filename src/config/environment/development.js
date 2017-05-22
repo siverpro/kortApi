@@ -1,16 +1,15 @@
-'use strict';
-/*eslint no-process-env:0*/
-
 // Developement specific configuration
 // ===================================
 
-module.exports = {
+process.env.NODE_CONFIG_DIR = 'src/config';
 
-	// MongoDB connection options
-	mongo: {
-		uri: 'mongodb://localhost/fortunadb'
-	},
+export default {
 
-	// TODO: fix seeds
-	seedDB: true
+  // MongoDB connection options
+  mongo: {
+    uri: 'mongodb://localhost/fortunadb',
+  },
+
+  // TODO: fix seeds
+  seedDB: true,
 };

@@ -1,25 +1,26 @@
-'use strict';
+import SwaggerExpress from 'swagger-express-mw';
+import app from 'express';
+import config from './config/environment';
 
-var SwaggerExpress = require('swagger-express-mw');
-var app = require('express')();
-var config = require('./config/environment');
+const server = app();
 
-var appConfig = {
-  appRoot: __dirname // required config
+export const init = () => {
+  const appConfig = {
+    appRoot: __dirname, // required config
+  };
+
+  SwaggerExpress.create(appConfig, (err, swaggerExpress) => {
+    if (err) { throw err; }
+
+    // install middleware
+    swaggerExpress.register(server);
+
+    server.listen(config.port);
+
+    if (swaggerExpress.runner.swagger.paths['/Fisker']) {
+      console.log('runs cool');
+    }
+  });
 };
 
-SwaggerExpress.create(appConfig, function(err, swaggerExpress) {
-  if (err) { throw err; }
-
-  // install middleware
-  swaggerExpress.register(app);
-
-  app.listen(config.port);
-  console.log('running');
-
-  if (swaggerExpress.runner.swagger.paths['/users']) {
-    console.log('try this:\ncurl http://127.0.0.1:' + config.port + '/hello?name=Scott');
-  }
-});
-
-module.exports = app; // for testing
+export default server; // for testing

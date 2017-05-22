@@ -1,10 +1,10 @@
-var mongoose = require('mongoose');
-var db = require('../../config/db');
+import mongoose from 'mongoose';
+import db from '../../config/db';
 
-var fangstSchema = mongoose.Schema({
+const fangstSchema = mongoose.Schema({
   name: { type: String, required: true },
   fisher: { type: String, required: true },
   date: { type: Date, required: true },
 });
 
-module.exports = db.model('Fangst', fangstSchema);
+export default db.model('Fangst', fangstSchema);

@@ -1,10 +1,10 @@
-var mongoose = require('mongoose');
-var db = require('../../config/db');
+import mongoose from 'mongoose';
+import db from '../../config/db';
 
-var userSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
   name: { type: String, required: true },
   phone: { type: String, required: true },
-  dateAdded: { type: Date, default: Date.now }
+  dateAdded: { type: Date, default: Date.now },
 });
 
-module.exports = db.model('Fisker', userSchema);
+export default db.model('Fisker', userSchema);

@@ -1,29 +1,39 @@
-'use strict';
-/*eslint no-process-env:0*/
+import _ from 'lodash';
+import dev from './development';
+import test from './test';
+import prod from './production';
 
-var _ = require('lodash');
+let env = dev;
 
-var all = {
-	env: process.env.NODE_ENV,
+if (process.env.NODE_ENV === 'test') {
+  env = test;
+}
 
-	// Server port
-	port: process.env.PORT || 10010,
+if (process.env.NODE_ENV === 'production') {
+  env = prod;
+}
 
-	// Server IP
-	ip: process.env.IP || '0.0.0.0',
+const all = {
+  env: process.env.NODE_ENV,
 
-	seedDB: false,
+  // Server port
+  port: process.env.PORT || 10010,
 
-	mongo: {
-		options: {
-			db: {
-				safe: true
-			}
-		}
-	}
+  // Server IP
+  ip: process.env.IP || '0.0.0.0',
+
+  seedDB: false,
+
+  mongo: {
+    options: {
+      db: {
+        safe: true,
+      },
+    },
+  },
 };
 
-module.exports = _.merge(
-	all,
-	require(`./${process.env.NODE_ENV}.js`) || {}
+export default _.merge(
+  all,
+  env || {},
 );
