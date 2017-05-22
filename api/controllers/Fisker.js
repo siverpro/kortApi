@@ -1,5 +1,5 @@
 'use strict';
-var User = require('../models/User');
+var User = require('../models/Fisker');
 
 module.exports = {getAll, save, getOne, update, delUser};
 
