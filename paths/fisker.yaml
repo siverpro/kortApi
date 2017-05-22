@@ -1,17 +1,6 @@
-x-swagger-router-controller: Fisker
 get:
-  description: Gets a specified fisher
-  parameters:
-    - name: id
-      type: string
-      in: path
-      required: true
   responses:
     "200":
       description: Success
       schema:
-        $ref: "#/definitions/GetFisherResponse"
-    default:
-      description: Error
-      schema:
-        $ref: "#/definitions/ErrorResponse"
+        $ref: "#/definitions/Fisker"

@@ -17,6 +17,7 @@ consumes:
 # format of the responses to the client (Accepts)
 produces:
   - application/json
+
 paths:
   $ref: ./paths/index.yaml
 
