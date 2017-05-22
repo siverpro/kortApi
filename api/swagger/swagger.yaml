@@ -3,7 +3,7 @@ info:
   version: "0.0.1"
   title: Fortuna Fiskekort API
 # during dev, should point to your local machine
-host: 10.5.90.61:10010
+host: localhost:10010
 # basePath prefixes all resource paths 
 basePath: /
 # 
@@ -19,10 +19,20 @@ produces:
   - application/json
 
 paths:
-  $ref: ./paths/index.yaml
+  /Fisker:
+    get:
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/Fisker"
 
   /swagger:
     x-swagger-pipe: swagger_raw
 # complex objects have schema definitions
 definitions:
-  $ref: ./definitions/index.yaml
+  Fisker:
+    type: object
+    properties:
+      name:
+        type: string
