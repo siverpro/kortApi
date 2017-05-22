@@ -7,4 +7,4 @@ var userSchema = mongoose.Schema({
   dateAdded: { type: Date, default: Date.now }
 });
 
-module.exports = db.model('User', userSchema);
+module.exports = db.model('Fisker', userSchema);
