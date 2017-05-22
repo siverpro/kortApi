@@ -1,0 +1,37 @@
+# binds a127 app logic to a route
+x-swagger-router-controller: Fisker
+get:
+  description: Gets the fisher list
+  operationId: getAll
+  responses:
+    "200":
+      description: Success
+      schema:
+      # a pointer to a definition
+        $ref: "#/definitions/GetUsersResponse"
+      # responses may fall through to errors
+      default:
+      description: Error
+      schema:
+        $ref: "#/definitions/ErrorResponse"
+post:
+  description: Add a fisher
+  # info to be stored
+  operationId: save
+  parameters:
+    - name: username
+      description: user properties
+      in: body
+      required: true
+      schema:
+        $ref: "#/definitions/User"
+            
+  responses:
+    "200":
+      description: Success
+      schema:
+        $ref: "#/definitions/GeneralResponse"
+      default:
+        description: Error
+        schema:
+          $ref: "#/definitions/ErrorResponse"

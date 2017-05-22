@@ -1,0 +1,62 @@
+x-swagger-router-controller: Fisker
+get:
+  description: Gets a specified fisher
+  operationId: getOne
+  parameters:
+    - name: id
+      type: string
+      in: path
+      required: true
+  responses:
+    "200":
+      description: Success
+      schema:
+        $ref: "#/definitions/GetUserResponse"
+    default:
+      description: Error
+      schema:
+        $ref: "#/definitions/ErrorResponse"
+
+put:
+  description: Update a fisher
+  operationId: update
+  parameters:
+    - name: id
+      description: User ID
+      type: string
+      in: path
+      required: true
+    - name: username
+      description: User properties
+      in: body
+      required: true
+      schema:
+        $ref: "#/definitions/User"
+  responses:
+    "200":
+      description: Success
+      schema:
+        $ref: "#/definitions/GeneralResponse"
+    default:
+      description: Error
+      schema:
+        $ref: "#/definitions/ErrorResponse"
+
+delete:
+  description: Delete a fisher
+  operationId: delUser
+  parameters:
+    - name: id
+      description: User ID
+      type: string
+      in: path
+      required: true
+  responses:
+    "200":
+      description: Success
+      schema:
+        $ref: "#/definitions/GeneralResponse"
+    default:
+      description: Error
+      schema:
+        $ref: "#/definitions/ErrorResponse"
