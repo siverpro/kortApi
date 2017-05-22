@@ -1,3 +1,15 @@
-var mongoose = require('mongoose');
+'use strict';
 
-module.exports = mongoose.createConnection('mongodb://localhost/fortunadb);
+var mongoose = require('mongoose');
+var config = require('./environment');
+
+module.exports = mongoose.connect(config.mongo.uri, config.mongo.options);
+
+mongoose.connection.on('error', function(err) {
+	console.error(`MongoDB connection error: ${err}`);
+  process.exit(-1); // eslint-disable-line no-process-exit
+});
+
+mongoose.connection.once('open', function() {
+	console.log('mongodb connection open');
+});
