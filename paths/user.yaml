@@ -31,7 +31,7 @@ put:
       in: body
       required: true
       schema:
-        $ref: "#/definitions/User"
+        $ref: "#/definitions/Fisker"
   responses:
     "200":
       description: Success

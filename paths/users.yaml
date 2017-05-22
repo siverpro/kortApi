@@ -24,7 +24,7 @@ post:
       in: body
       required: true
       schema:
-        $ref: "#/definitions/User"
+        $ref: "#/definitions/Fisker"
             
   responses:
     "200":
