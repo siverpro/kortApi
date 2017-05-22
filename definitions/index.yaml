@@ -1,0 +1,53 @@
+User: 
+  type: object
+  properties:
+    username:
+      type: string
+      description: User name
+  required:
+    - username
+ 
+GetUsersResponse:
+  required:
+    - users
+  properties:
+    users:
+      # array of users
+      type: array
+      items:
+        type: object
+        properties:
+         id:
+            type: string
+         username:
+            type: string
+              
+GetUserResponse:
+  required:
+    - id
+    - username
+  properties:
+    id:
+      type: string
+    username:
+      type: string
+
+ErrorResponse:
+  required:
+    - message
+  properties:
+    message:
+      type: string
+
+GeneralResponse:
+  type: object
+  properties:
+    success:
+      type: number
+      description: returns 1 if successful
+    description:
+      type: string
+      description: a short comment 
+  required:
+    - success
+    - description
