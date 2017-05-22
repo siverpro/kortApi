@@ -6,7 +6,7 @@
   "keywords": [],
   "author": "",
   "license": "",
-  "main": "app.js",
+  "main": "index.js",
   "dependencies": {
     "express": "^4.12.3",
     "lodash": "^4.17.4",

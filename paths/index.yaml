@@ -1,4 +1,2 @@
-/fiskere:
-  $ref: ./fiskere.yaml
 /fisker/{id}:
   $ref: ./fisker.yaml

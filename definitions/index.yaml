@@ -1,23 +1,22 @@
-Fisker: 
-  type: object
+GetFisherResponse:
+  required:
+    - id
+    - fishername
   properties:
     id:
       type: string
-    username:
+    fishername:
       type: string
-      description: User name
+
+Fisher:
+  type: object
+  properties: 
+    id:
+      type: string
+    fishername:
+      type: string
   required:
-    - username
-    - id
- 
-Fiskere:
-  required:
-    - fiskere
-  properties:
-    fiskere:
-      type: array
-      items:
-        $ref: "#/Fisker"
+    - fishername
 
 ErrorResponse:
   required:
