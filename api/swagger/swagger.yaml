@@ -18,7 +18,31 @@ consumes:
 produces:
   - application/json
 
+# paths
 paths:
+  /AvailableCards:
+    x-swagger-router-controller: AvailableCards
+    get:
+      description: Get number of available cards in a given month
+      operationId: GetAvailableCards
+      parameters:
+        - name: month
+          type: string
+          in: query
+          required: true
+        - name: year
+          type: string
+          in: query
+          required: true
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/AvailableCards"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
   /Fisker/{id}:
     x-swagger-router-controller: Fisker
     get:
@@ -40,6 +64,7 @@ paths:
 
   /swagger:
     x-swagger-pipe: swagger_raw
+
 # complex objects have schema definitions
 definitions:
   Fisker:
@@ -54,5 +79,15 @@ definitions:
     properties:
       message:
         type: string
-    
-    
+  AvailableCards:
+    type: array
+    description: Array of dates
+    items:
+      type: object
+      properties:
+        date:
+          type: string
+          description: a date
+        availablecards:
+          type: string
+          description: number of available cards
