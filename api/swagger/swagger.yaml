@@ -19,13 +19,24 @@ produces:
   - application/json
 
 paths:
-  /Fisker:
+  /Fisker/{id}:
+    x-swagger-router-controller: Fisker
     get:
+      description: Get a Fisher
+      parameters:
+        - name: id
+          type: string
+          in: path
+          required: true
       responses:
         "200":
           description: Success
           schema:
             $ref: "#/definitions/Fisker"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
 
   /swagger:
     x-swagger-pipe: swagger_raw
@@ -33,6 +44,15 @@ paths:
 definitions:
   Fisker:
     type: object
+    description: En fisker
     properties:
       name:
         type: string
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
+    
+    
