@@ -9,7 +9,7 @@ function GetAvailableCards(req, res) {
 		this.availablecards = availablecards
 	};
 	var dateList = [];
-	dateList.push(new CardDate(1, 15));
-	dateList.push(new CardDate(2, 9));
+	dateList.push(new CardDate("1", "15"));
+	dateList.push(new CardDate("2", "9"));
 	res.json(dateList);
 }
